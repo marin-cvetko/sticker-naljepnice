@@ -1,0 +1,197 @@
+/* Osnovni izgled prati izvornu AiO Printer stranicu. */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  color: #0073c2;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  margin-bottom: 22px;
+}
+
+#printSettings {
+  width:50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#printSettings2 {
+  gap: 14px;
+  width:50%;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  word-break: break-word; 
+  font-weight: bold;
+}
+
+#printSettings strong { margin-right: 8px; }
+#printSettings label { font-weight: 600; }
+
+select,
+input[type="number"] {
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0073c2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color .2s ease-in-out;
+}
+
+button:hover {
+  background-color: #009ee3;
+  cursor: pointer;
+}
+
+#circleTable {
+  width: min(900px, 100%);
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+th {
+  background-color: #0073c2;
+  color: #fff;
+  font-weight: bold;
+}
+
+tr:hover { background-color: #f0f8ff; }
+
+#circleTable th:first-child,
+#circleTable td:first-child {
+  width: 130px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+#circleTable th:last-child,
+#circleTable td:last-child {
+  width: 100px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+  accent-color: #0073c2;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 70px;
+  text-align: center;
+}
+
+.preview-link {
+  color: #0073c2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#selectionInfo {
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+#printInfo {
+  color: #444;
+  line-height: 1.5;
+}
+
+#emptyState {
+  padding: 20px;
+  background: #fff;
+}
+
+details {
+  margin-top: 28px;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 850px;
+}
+
+summary { cursor: pointer; font-weight: bold; }
+pre { overflow-x: auto; padding: 12px; background: #f5f5f5; }
+
+@media (max-width: 768px) {
+  body { padding: 18px 12px; }
+  #printSettings { align-items: flex-start; }
+  #printSettings > * { max-width: 100%; }
+  th, td { padding: 9px 7px; }
+  #circleTable { font-size: 14px; }
+}
+
+
+/* Alat za jednokratni custom/test sticker. */
+#customSticker {
+  width: 50%;
+  margin: 24px 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+#customSticker h2 { margin-top: 0; color: #0073c2; }
+#customStickerForm {
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(220px, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+}
+#customStickerForm label { font-weight: 600; }
+#customStickerForm input[type="text"],
+#customSticker textarea {
+  width: 80%; min-width: 0; padding: 9px 10px; font: inherit;
+  border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #333;
+}
+#customStickerForm input[type="color"] { width: 58px; height: 38px; padding: 3px; }
+.custom-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+#customMessage { min-height: 1.4em; color: #444; }
+#customCode { display: block; margin: 8px 0 10px; font: 13px/1.5 Consolas, monospace; }
+#copyCustomCodeBtn { margin-top: 2px; }
+@media (max-width: 600px) {
+  #customSticker { padding: 14px; }
+  #customStickerForm { grid-template-columns: 1fr; gap: 7px; }
+  #customStickerForm label { margin-top: 5px; }
+  .custom-actions { grid-column: auto; }
+}

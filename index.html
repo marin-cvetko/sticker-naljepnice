@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiO Printer - Promotivni krugovi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>AiO Printer - Promotivni krugovi</h1>
+
+  <section id="printSettings" aria-label="Postavke ispisa">
+    <strong>Postavke ispisa</strong>
+    <label for="layoutSelect">Veličina krugova / raspored na A4:</label>
+    <select id="layoutSelect">
+      <option value="dense" selected>4 x 6 krugova (24 po stranici, Ø 4 cm)</option>
+      <option value="large">2 x 3 kruga (6 po stranici, Ø 8 cm)</option>
+      <option value="extraLarge">1 x 2 kruga (2 po stranici, Ø 14 cm)</option>
+    </select>
+  </section>
+
+  <table id="circleTable">
+    <thead>
+      <tr>
+        <th>Označi za print</th>
+        <th>Naziv</th>
+        <th>Pretpregled</th>
+        <th>Količina</th>
+      </tr>
+    </thead>
+    <tbody id="circleTableBody"></tbody>
+  </table><br>
+
+  <section id="printSettings" aria-label="Postavke ispisa">
+    <button id="printBtn" type="button">Isprintaj označeno</button>
+    <p id="selectionInfo"></p>
+  </section>
+
+  <section id="printSettings2">
+    <p>U ispisu isključiti dvostrano printanje i pod margine staviti "bez margina ili nema margina".<br>
+      Također, postavku skaliranje staviti na zadano ili prilagodi stranici, da se ne prelijeva na drugu stranicu.
+    </p>
+
+    <p>Ukoliko nešto ne radi:<br>
+      marin.cvetko123@gmail.com | ludbreg@vacom.hr
+    </p>
+
+    <p>
+      Ažuriranja / Changelog:<br>
+      12/10/2026 - Verzija 1.0
+    </p>
+  </section>
+
+  <section id="customSticker" aria-labelledby="customStickerTitle">
+    <h2 id="customStickerTitle">Test / Custom print</h2>
+    <p>Unesi podatke za jedan probni sticker. Ovaj unos se ne sprema trajno.</p>
+    <form id="customStickerForm" autocomplete="off">
+      <label for="customNaziv">Naziv (za tablicu)</label>
+      <input id="customNaziv" type="text" value="custom-sticker" />
+      <label for="customPopust">Glavni tekst (popust) *</label>
+      <input id="customPopust" type="text" placeholder="npr. SUPER AKCIJA" required />
+      <label for="customTekst">Dodatni tekst</label>
+      <input id="customTekst" type="text" placeholder="npr. UZ KOD: SUPER50" />
+      <label for="customBoja">Boja teksta</label>
+      <input id="customBoja" type="color" value="#ffffff" />
+      <label for="customDatum">Napomena ispod teksta</label>
+      <input id="customDatum" type="text" placeholder="npr. Vrijedi do 31.10.2026." />
+      <div class="custom-actions">
+        <button id="customPreviewBtn" type="button">Pretpregled</button>
+        <button id="customPrintBtn" type="button">Ispiši 1 probni sticker</button>
+      </div>
+    </form>
+    <p id="customMessage" role="status" aria-live="polite"></p>
+    <label for="customCode"><strong>Kod za kopiranje u KRUGOVI</strong></label>
+    <textarea id="customCode" rows="3" readonly spellcheck="false"></textarea>
+  </section>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
