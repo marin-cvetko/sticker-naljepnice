@@ -1,21 +1,46 @@
 /*
  * UREDI OVAJ POPIS ZA DODAVANJE ILI MIJENJANJE PROMOTIVNIH KRUGOVA.
- * naziv = naziv u tablici; popust = glavni tekst; tekst = opcionalni redak ispod.
+ * naziv = naziv u tablici; akcija = kategorija za filter; popust = glavni tekst;
+ * tekst = opcionalni redak ispod.
  * boja = HEX boja teksta za popust i tekst (npr. "#e83e8c"); zadano bijela.
  * datum = tekst unutar donjeg dijela kruga; uvijek string, prazan ako se ne koristi.
  * Predložak određuje broj i veličinu krugova na A4. Količina se bira u tablici.
  */
 const KRUGOVI = [
-  { naziv: "jbl-kod-5posto", popust: "-5%", tekst: "UZ KOD: JBL5", boja: "#ffffff", datum: "test test test" },
-  { naziv: "jbl-kod-10posto", popust: "-10%", tekst: "UZ KOD: RASPRODAJA10", boja: "#d9ff00", datum: "" },
-  { naziv: "jbl-kod-15posto", popust: "-15%", tekst: "", boja: "#08ca02", datum: "" },
-  { naziv: "jbl-kod-20posto", popust: "-20%", tekst: "", boja: "#ffffff", datum: "Do isteka zaliha" },
-  { naziv: "jbl-kod-25posto", popust: "-25%", tekst: "UZ KOD: JBL25", boja: "#006eec", datum: "Do 12.1.2028." },
-  { naziv: "jbl-kod-30posto", popust: "-30%", tekst: "UZ KOD: JBL30", boja: "#ffffff", datum: "" },
-  { naziv: "jbl-kod-35posto", popust: "-35%", tekst: "UZ KOD: JBL35", boja: "#ffffff", datum: "" },
-  { naziv: "jbl-kod-40posto", popust: "-40%", tekst: "UZ KOD: JBL40", boja: "#ffffff", datum: "" },
-  { naziv: "jbl-kod-45posto", popust: "-45%", tekst: "UZ KOD: JBL45", boja: "#ffffff", datum: "" },
-  { naziv: "opca-napomena", popust: "SUPER 50 RASPRODAJA10", tekst: "", boja: "#ffffff", datum: "" }
+  { naziv: "obican-5%", akcija: "Obična", popust: "-5%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-10%", akcija: "Obična", popust: "-10%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-15%", akcija: "Obična", popust: "-15%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-20%", akcija: "Obična", popust: "-20%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-25%", akcija: "Obična", popust: "-25%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-30%", akcija: "Obična", popust: "-30%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-35%", akcija: "Obična", popust: "-35%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-40%", akcija: "Obična", popust: "-40%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-45%", akcija: "Obična", popust: "-45%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-50%", akcija: "Obična", popust: "-50%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-55%", akcija: "Obična", popust: "-55%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-60%", akcija: "Obična", popust: "-60%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-65%", akcija: "Obična", popust: "-65%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-70%", akcija: "Obična", popust: "-70%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-75%", akcija: "Obična", popust: "-75%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-80%", akcija: "Obična", popust: "-80%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-85%", akcija: "Obična", popust: "-85%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "obican-90%", akcija: "Obična", popust: "-90%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "jbl-5%", akcija: "JBL - Listopad", popust: "-5%", tekst: "Uz kod: JBL5", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-10%", akcija: "JBL - Listopad", popust: "-10%", tekst: "Uz kod: JBL10", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-15%", akcija: "JBL - Listopad", popust: "-15%", tekst: "Uz kod: JBL15", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-20%", akcija: "JBL - Listopad", popust: "-20%", tekst: "Uz kod: JBL20", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-25%", akcija: "JBL - Listopad", popust: "-25%", tekst: "Uz kod: JBL25", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-30%", akcija: "JBL - Listopad", popust: "-30%", tekst: "Uz kod: JBL30", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-35%", akcija: "JBL - Listopad", popust: "-35%", tekst: "Uz kod: JBL35", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-40%", akcija: "JBL - Listopad", popust: "-40%", tekst: "Uz kod: JBL40", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-45%", akcija: "JBL - Listopad", popust: "-45%", tekst: "Uz kod: JBL45", boja: "#ffff00", datum: "" },
+  { naziv: "jbl-50%", akcija: "JBL - Listopad", popust: "-50%", tekst: "Uz kod: JBL50", boja: "#ffff00", datum: "" },
+  { naziv: "super-5%", akcija: "Super Prilika - Listopad", popust: "-5%", tekst: "Uz kod: SUPER5", boja: "#ffff00", datum: "Do: 3.11.2026." },
+  { naziv: "super-10%", akcija: "Super Prilika - Listopad", popust: "-10%", tekst: "Uz kod: SUPER10", boja: "#ffff00", datum: "Do: 3.11.2026." },
+  { naziv: "super-15%", akcija: "Super Prilika - Listopad", popust: "-15%", tekst: "Uz kod: SUPER15", boja: "#ffff00", datum: "Do: 3.11.2026." },
+  { naziv: "super-20%", akcija: "Super Prilika - Listopad", popust: "-20%", tekst: "Uz kod: SUPER20", boja: "#ffff00", datum: "Do: 3.11.2026." },
+  { naziv: "super-25%", akcija: "Super Prilika - Listopad", popust: "-25%", tekst: "Uz kod: SUPER25", boja: "#ffff00", datum: "Do: 3.11.2026." },
+  { naziv: "super-30%", akcija: "Super Prilika - Listopad", popust: "-30%", tekst: "Uz kod: SUPER30", boja: "#ffff00", datum: "Do: 3.11.2026." }
 ];
 
 const CIRCLE_PINK = "#e83e8c";
@@ -26,28 +51,31 @@ const CIRCLE_PINK = "#e83e8c";
  */
 const LAYOUTS = {
   dense: {
-    label: "4 × 6 krugova po A4 (24 po stranici)",
+    label: "4 x 6 krugova po A4 (24 po stranici)",
     columns: 4, rows: 6, perPage: 24,
     diameterMm: 44.5, gapXmm: 5, rowPitchMm: 45,
     template: "small"
   },
   large: {
-    label: "2 × 3 kruga po A4 (6 po stranici)",
+    label: "2 x 3 kruga po A4 (6 po stranici)",
     columns: 2, rows: 3, perPage: 6,
-    diameterMm: 82, gapXmm: 8, rowPitchMm: 92,
+    diameterMm: 90, gapXmm: 8, rowPitchMm: 92,
     template: "large"
   },
   extraLarge: {
-    label: "1 × 2 kruga po A4 (2 po stranici, Ø 140 mm)",
+    label: "1 x 2 kruga po A4 (2 po stranici)",
     columns: 1, rows: 2, perPage: 2,
     diameterMm: 140, gapXmm: 0, rowPitchMm: 140,
     template: "large"
   }
 };
 const TEMPLATES = {
-  small: { mainRatio: 0.28, subRatio: 0.11, mainNoSubRatio: 0.31, minFont: 2.4 },
-  large: { mainRatio: 0.27, subRatio: 0.105, mainNoSubRatio: 0.31, minFont: 2.6 }
+  // Omjeri su gornje granice; stvarna veličina uvijek raste do najveće koja stane
+  // u prostor pojedinog retka, za sva tri rasporeda A4.
+  small: { mainOnlyRatio: .62, mainWithDateRatio: .43, mainWithSubRatio: .34, subRatio: .16, dateRatio: .065, minFont: 2.4 },
+  large: { mainOnlyRatio: .62, mainWithDateRatio: .43, mainWithSubRatio: .34, subRatio: .16, dateRatio: .065, minFont: 2.6 }
 };
+const ITEMS_PER_PAGE = 20;
 
 const tbody = document.getElementById("circleTableBody");
 const layoutSelect = document.getElementById("layoutSelect");
@@ -56,7 +84,12 @@ const selectionInfo = document.getElementById("selectionInfo");
 const printInfo = document.getElementById("printInfo");
 const layoutInfo = document.getElementById("layoutInfo");
 const emptyState = document.getElementById("emptyState");
+const circleSearch = document.getElementById("circleSearch");
+const actionFilter = document.getElementById("actionFilter");
+const tablePagination = document.getElementById("tablePagination");
+const tableResultInfo = document.getElementById("tableResultInfo");
 const state = KRUGOVI.map(() => ({ selected: false, quantity: 1 }));
+let tablePage = 1;
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, character => ({
@@ -71,6 +104,22 @@ function currentLayout() {
 function safeTextColor(circle) {
   const color = String(circle.boja ?? "#ffffff").trim();
   return /^#[0-9a-fA-F]{6}$/.test(color) ? color : "#ffffff";
+}
+
+function actionLabel(circle) {
+  return String(circle.akcija ?? "Ostalo").trim() || "Ostalo";
+}
+
+function initActionFilter() {
+  if (!actionFilter) return;
+  const actions = [...new Set(KRUGOVI.map(actionLabel))]
+    .sort((left, right) => left.localeCompare(right, "hr"));
+  actions.forEach(action => {
+    const option = document.createElement("option");
+    option.value = action;
+    option.textContent = action;
+    actionFilter.appendChild(option);
+  });
 }
 
 function circleMarkup(circle, layout) {
@@ -97,15 +146,28 @@ function circleMarkup(circle, layout) {
 
 function renderTable() {
   tbody.innerHTML = "";
-  if (emptyState) emptyState.hidden = KRUGOVI.length > 0;
+  const searchTerm = String(circleSearch?.value || "").trim().toLocaleLowerCase("hr");
+  const selectedAction = String(actionFilter?.value || "");
+  const matchingIndexes = KRUGOVI
+    .map((circle, index) => ({ circle, index }))
+    .filter(({ circle }) =>
+      String(circle.naziv || "").toLocaleLowerCase("hr").includes(searchTerm) &&
+      (!selectedAction || actionLabel(circle) === selectedAction)
+    );
+  const totalPages = Math.max(1, Math.ceil(matchingIndexes.length / ITEMS_PER_PAGE));
+  tablePage = Math.min(Math.max(1, tablePage), totalPages);
+  const pageStart = (tablePage - 1) * ITEMS_PER_PAGE;
+  const pageItems = matchingIndexes.slice(pageStart, pageStart + ITEMS_PER_PAGE);
+  if (emptyState) emptyState.hidden = matchingIndexes.length > 0;
 
-  KRUGOVI.forEach((circle, index) => {
+  pageItems.forEach(({ circle, index }) => {
     const itemState = state[index];
     const row = document.createElement("tr");
     row.innerHTML = `
       <td><input type="checkbox" aria-label="Označi ${escapeHtml(circle.naziv)} za ispis" ${itemState.selected ? "checked" : ""}></td>
       <td><strong>${escapeHtml(circle.naziv)}</strong></td>
-      <td><a class="preview-link" href="#preview-${index}" target="_blank" rel="noopener">Pretpregled kruga ↗</a></td>
+      <td>${escapeHtml(actionLabel(circle))}</td>
+      <td><a class="preview-link" href="#preview-${index}" target="_blank" rel="noopener">Pretpregled ↗</a></td>
       <td><input type="number" min="1" max="9999" step="1" value="${itemState.quantity}" aria-label="Količina za ${escapeHtml(circle.naziv)}"></td>`;
 
     row.querySelector('input[type="checkbox"]').addEventListener("change", event => {
@@ -131,7 +193,50 @@ function renderTable() {
     tbody.appendChild(row);
   });
 
+  renderPagination(matchingIndexes.length, totalPages, pageStart);
+
   updateSummary();
+}
+
+function renderPagination(totalItems, totalPages, pageStart) {
+  if (tableResultInfo) {
+    tableResultInfo.textContent = totalItems
+      ? `Prikazano ${pageStart + 1}–${Math.min(pageStart + ITEMS_PER_PAGE, totalItems)} od ${totalItems} stavki`
+      : "Nema stavki za upisani naziv.";
+  }
+  if (!tablePagination) return;
+  tablePagination.innerHTML = "";
+  if (totalPages <= 1) return;
+
+  const addButton = (label, page, disabled = false, current = false) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = label;
+    button.disabled = disabled;
+    if (current) button.setAttribute("aria-current", "page");
+    button.addEventListener("click", () => {
+      tablePage = page;
+      renderTable();
+    });
+    tablePagination.appendChild(button);
+  };
+  addButton("‹ Prethodna", tablePage - 1, tablePage === 1);
+  // Kod većeg broja zapisa držimo navigaciju kratkom, bez stotina tipki.
+  const pagesToShow = [...new Set([1, tablePage - 1, tablePage, tablePage + 1, totalPages])]
+    .filter(page => page >= 1 && page <= totalPages)
+    .sort((left, right) => left - right);
+  let previousPage = 0;
+  pagesToShow.forEach(page => {
+    if (page - previousPage > 1) {
+      const ellipsis = document.createElement("span");
+      ellipsis.textContent = "…";
+      ellipsis.setAttribute("aria-hidden", "true");
+      tablePagination.appendChild(ellipsis);
+    }
+    addButton(String(page), page, false, page === tablePage);
+    previousPage = page;
+  });
+  addButton("Sljedeća ›", tablePage + 1, tablePage === totalPages);
 }
 
 function getSelected() {
@@ -212,11 +317,14 @@ function autoFitScript() {
         const diameter = Math.min(circle.clientWidth, circle.clientHeight);
         const main = circle.querySelector('.promo-main');
         const sub = circle.querySelector('.promo-sub');
+        const date = circle.querySelector('.promo-date');
         const hasSub = circle.classList.contains('has-sub') && !!sub;
-        fitOneText(main, diameter * (hasSub ? template.mainRatio : 0.9), template.minFont);
+        const hasDate = circle.querySelector('.promo-content').classList.contains('has-date') && !!date;
+        const mainRatio = hasSub ? template.mainWithSubRatio : (hasDate ? template.mainWithDateRatio : template.mainOnlyRatio);
+        fitOneText(main, diameter * mainRatio, template.minFont);
         if (sub) fitOneText(sub, diameter * template.subRatio, template.minFont);
+        if (date) fitOneText(date, diameter * template.dateRatio, template.minFont);
       });
-      document.querySelectorAll('.promo-date').forEach(date => fitOneText(date, 8, 4));
     }
     window.addEventListener('load', () => requestAnimationFrame(() => requestAnimationFrame(fitPromoCircles)));
     window.addEventListener('resize', fitPromoCircles);
@@ -440,11 +548,11 @@ function openPrintTab(html, errorMessage) {
   }
   setTimeout(() => URL.revokeObjectURL(blobUrl), 5 * 60 * 1000);
   const timer = setInterval(() => {
-  if (printTab.closed) {
-    clearInterval(timer);
-    window.location.reload();
-  }
-}, 500);
+    if (printTab.closed) {
+      clearInterval(timer);
+      window.location.reload();
+    }
+  }, 500);
   return true;
 }
 
@@ -463,7 +571,7 @@ function customStickerCode(sticker) {
   // JSON.stringify safely quotes strings but produces a JavaScript object literal,
   // compatible with the existing KRUGOVI array format.
   const quote = value => JSON.stringify(String(value ?? ""));
-  return `{ naziv: ${quote(sticker.naziv)}, popust: ${quote(sticker.popust)}, tekst: ${quote(sticker.tekst)}, boja: ${quote(sticker.boja)}, datum: ${quote(sticker.datum)} },`;
+  return `{ naziv: ${quote(sticker.naziv)}, akcija: "custom", popust: ${quote(sticker.popust)}, tekst: ${quote(sticker.tekst)}, boja: ${quote(sticker.boja)}, datum: ${quote(sticker.datum)} },`;
 }
 
 function updateCustomCode() {
@@ -544,6 +652,15 @@ printBtn?.addEventListener("click", () => {
 });
 
 layoutSelect?.addEventListener("change", updateSummary);
+circleSearch?.addEventListener("input", () => {
+  tablePage = 1;
+  renderTable();
+});
+actionFilter?.addEventListener("change", () => {
+  tablePage = 1;
+  renderTable();
+});
 
+initActionFilter();
 renderTable();
 initCustomTools();
