@@ -12,7 +12,6 @@
   <h1>AiO Printer - Promo krugovi</h1>
 
   <section id="printSettings" aria-label="Postavke ispisa">
-    <strong>Postavke ispisa</strong>
     <label for="layoutSelect">Veličina krugova / raspored na A4:</label>
     <select id="layoutSelect">
       <option value="dense" selected>4 x 6 krugova (24 po stranici, Ø 4 cm)</option>
@@ -22,13 +21,12 @@
   </section>
 
   <section id="tableControls" aria-label="Pretraga krugova">
-    <label for="circleSearch">Traži po nazivu</label>
+    <label for="circleSearch">Traži po nazivu:</label>
     <input id="circleSearch" type="search" placeholder="Upiši naziv…" autocomplete="off" />
-    <label for="actionFilter">Akcija</label>
+    <label for="actionFilter">Akcija:</label>
     <select id="actionFilter" aria-label="Filtriraj po akciji">
       <option value="">Sve akcije</option>
     </select>
-    <p id="tableResultInfo" aria-live="polite"></p>
   </section>
 
   <table id="circleTable">
@@ -44,6 +42,7 @@
     <tbody id="circleTableBody"></tbody>
   </table>
   <nav id="tablePagination" aria-label="Stranice tablice"></nav>
+  <p id="tableResultInfo" aria-live="polite"></p>
   <br>
 
   <section id="printSettings" aria-label="Postavke ispisa">
@@ -74,13 +73,13 @@
       <label for="customNaziv">Naziv (za tablicu)</label>
       <input id="customNaziv" type="text" value="custom-sticker" />
       <label for="customPopust">Glavni tekst (popust) *</label>
-      <input id="customPopust" type="text" placeholder="npr. SUPER AKCIJA" required />
+      <input id="customPopust" type="text" placeholder="npr. -50%" required />
       <label for="customTekst">Dodatni tekst</label>
-      <input id="customTekst" type="text" placeholder="npr. UZ KOD: SUPER50" />
+      <input id="customTekst" type="text" placeholder="npr. Uz kod: SUPER50" />
       <label for="customBoja">Boja teksta</label>
       <input id="customBoja" type="color" value="#ffffff" />
       <label for="customDatum">Napomena ispod teksta</label>
-      <input id="customDatum" type="text" placeholder="npr. Vrijedi do 31.10.2026." />
+      <input id="customDatum" type="text" placeholder="npr. Do: 31.10.2026." />
       <div class="custom-actions">
         <button id="customPreviewBtn" type="button">Pretpregled</button>
         <button id="customPrintBtn" type="button">Ispiši 1 probni sticker</button>

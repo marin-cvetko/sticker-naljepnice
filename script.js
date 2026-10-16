@@ -1,30 +1,21 @@
-/*
- * UREDI OVAJ POPIS ZA DODAVANJE ILI MIJENJANJE PROMOTIVNIH KRUGOVA.
- * naziv = naziv u tablici; akcija = kategorija za filter; popust = glavni tekst;
- * tekst = opcionalni redak ispod.
- * boja = HEX boja teksta za popust i tekst (npr. "#e83e8c"); zadano bijela.
- * datum = tekst unutar donjeg dijela kruga; uvijek string, prazan ako se ne koristi.
- * Predložak određuje broj i veličinu krugova na A4. Količina se bira u tablici.
- */
 const KRUGOVI = [
-  { naziv: "obican-5%", akcija: "Obična", popust: "-5%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-10%", akcija: "Obična", popust: "-10%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-15%", akcija: "Obična", popust: "-15%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-20%", akcija: "Obična", popust: "-20%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-25%", akcija: "Obična", popust: "-25%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-30%", akcija: "Obična", popust: "-30%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-35%", akcija: "Obična", popust: "-35%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-40%", akcija: "Obična", popust: "-40%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-45%", akcija: "Obična", popust: "-45%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-50%", akcija: "Obična", popust: "-50%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-55%", akcija: "Obična", popust: "-55%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-60%", akcija: "Obična", popust: "-60%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-65%", akcija: "Obična", popust: "-65%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-70%", akcija: "Obična", popust: "-70%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-75%", akcija: "Obična", popust: "-75%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-80%", akcija: "Obična", popust: "-80%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-85%", akcija: "Obična", popust: "-85%", tekst: "", boja: "#ffffff", datum: "" },
-  { naziv: "obican-90%", akcija: "Obična", popust: "-90%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-5%", akcija: "Obična", popust: "-5%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-10%", akcija: "Obična", popust: "-10%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-15%", akcija: "Obična", popust: "-15%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-20%", akcija: "Obična", popust: "-20%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-25%", akcija: "Obična", popust: "-25%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-30%", akcija: "Obična", popust: "-30%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-35%", akcija: "Obična", popust: "-35%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-40%", akcija: "Obična", popust: "-40%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-45%", akcija: "Obična", popust: "-45%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-50%", akcija: "Obična", popust: "-50%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-55%", akcija: "Obična", popust: "-55%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-60%", akcija: "Obična", popust: "-60%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-65%", akcija: "Obična", popust: "-65%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-70%", akcija: "Obična", popust: "-70%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-75%", akcija: "Obična", popust: "-75%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-85%", akcija: "Obična", popust: "-85%", tekst: "", boja: "#ffffff", datum: "" },
+  { naziv: "običan-90%", akcija: "Obična", popust: "-90%", tekst: "", boja: "#ffffff", datum: "" },
   { naziv: "jbl-5%", akcija: "JBL - Listopad", popust: "-5%", tekst: "Uz kod: JBL5", boja: "#ffff00", datum: "" },
   { naziv: "jbl-10%", akcija: "JBL - Listopad", popust: "-10%", tekst: "Uz kod: JBL10", boja: "#ffff00", datum: "" },
   { naziv: "jbl-15%", akcija: "JBL - Listopad", popust: "-15%", tekst: "Uz kod: JBL15", boja: "#ffff00", datum: "" },
