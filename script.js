@@ -16,6 +16,7 @@ const KRUGOVI = [
   { naziv: "običan-75%", akcija: "Obična", popust: "-75%", tekst: "", boja: "#ffffff", datum: "" },
   { naziv: "običan-85%", akcija: "Obična", popust: "-85%", tekst: "", boja: "#ffffff", datum: "" },
   { naziv: "običan-90%", akcija: "Obična", popust: "-90%", tekst: "", boja: "#ffffff", datum: "" },
+
   { naziv: "jbl-5%", akcija: "JBL - Listopad", popust: "-5%", tekst: "Uz kod: JBL5", boja: "#ffff00", datum: "" },
   { naziv: "jbl-10%", akcija: "JBL - Listopad", popust: "-10%", tekst: "Uz kod: JBL10", boja: "#ffff00", datum: "" },
   { naziv: "jbl-15%", akcija: "JBL - Listopad", popust: "-15%", tekst: "Uz kod: JBL15", boja: "#ffff00", datum: "" },
@@ -26,12 +27,35 @@ const KRUGOVI = [
   { naziv: "jbl-40%", akcija: "JBL - Listopad", popust: "-40%", tekst: "Uz kod: JBL40", boja: "#ffff00", datum: "" },
   { naziv: "jbl-45%", akcija: "JBL - Listopad", popust: "-45%", tekst: "Uz kod: JBL45", boja: "#ffff00", datum: "" },
   { naziv: "jbl-50%", akcija: "JBL - Listopad", popust: "-50%", tekst: "Uz kod: JBL50", boja: "#ffff00", datum: "" },
-  { naziv: "super-5%", akcija: "Super Prilika - Listopad", popust: "-5%", tekst: "Uz kod: SUPER5", boja: "#ffff00", datum: "Do: 3.11.2026." },
-  { naziv: "super-10%", akcija: "Super Prilika - Listopad", popust: "-10%", tekst: "Uz kod: SUPER10", boja: "#ffff00", datum: "Do: 3.11.2026." },
-  { naziv: "super-15%", akcija: "Super Prilika - Listopad", popust: "-15%", tekst: "Uz kod: SUPER15", boja: "#ffff00", datum: "Do: 3.11.2026." },
-  { naziv: "super-20%", akcija: "Super Prilika - Listopad", popust: "-20%", tekst: "Uz kod: SUPER20", boja: "#ffff00", datum: "Do: 3.11.2026." },
-  { naziv: "super-25%", akcija: "Super Prilika - Listopad", popust: "-25%", tekst: "Uz kod: SUPER25", boja: "#ffff00", datum: "Do: 3.11.2026." },
-  { naziv: "super-30%", akcija: "Super Prilika - Listopad", popust: "-30%", tekst: "Uz kod: SUPER30", boja: "#ffff00", datum: "Do: 3.11.2026." }
+
+  { naziv: "super-5%", akcija: "Super Prilika - Listopad", popust: "-5%", tekst: "Uz kod: SUPER5", boja: "#ffff00", datum: "" },
+  { naziv: "super-10%", akcija: "Super Prilika - Listopad", popust: "-10%", tekst: "Uz kod: SUPER10", boja: "#ffff00", datum: "" },
+  { naziv: "super-15%", akcija: "Super Prilika - Listopad", popust: "-15%", tekst: "Uz kod: SUPER15", boja: "#ffff00", datum: "" },
+  { naziv: "super-20%", akcija: "Super Prilika - Listopad", popust: "-20%", tekst: "Uz kod: SUPER20", boja: "#ffff00", datum: "" },
+  { naziv: "super-25%", akcija: "Super Prilika - Listopad", popust: "-25%", tekst: "Uz kod: SUPER25", boja: "#ffff00", datum: "" },
+  { naziv: "super-30%", akcija: "Super Prilika - Listopad", popust: "-30%", tekst: "Uz kod: SUPER30", boja: "#ffff00", datum: "" },
+
+  { naziv: "epson-25€", akcija: "Epson", popust: "25 €", tekst: "EPSON CASHBACK", boja: "#4606db", datum: "Više na epson.hr/cashback" },
+  { naziv: "epson-30€", akcija: "Epson", popust: "30 €", tekst: "EPSON CASHBACK", boja: "#4606db", datum: "Više na epson.hr/cashback" },
+  { naziv: "epson-50€", akcija: "Epson", popust: "50 €", tekst: "EPSON CASHBACK", boja: "#4606db", datum: "Više na epson.hr/cashback" },
+  { naziv: "epson-80€", akcija: "Epson", popust: "80 €", tekst: "EPSON CASHBACK", boja: "#4606db", datum: "Više na epson.hr/cashback" },
+
+  { naziv: "bj-29%", akcija: "Otvorenje - Bjelovar", popust: "-29%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-22%", akcija: "Otvorenje - Bjelovar", popust: "-22%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-50%", akcija: "Otvorenje - Bjelovar", popust: "-50%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-28%", akcija: "Otvorenje - Bjelovar", popust: "-28%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-29%", akcija: "Otvorenje - Bjelovar", popust: "-29%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-46%", akcija: "Otvorenje - Bjelovar", popust: "-46%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-35%", akcija: "Otvorenje - Bjelovar", popust: "-35%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-kod-bj27", akcija: "Otvorenje - Bjelovar", popust: "-27%", tekst: "Uz kod: BJ27", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-kod-bj25", akcija: "Otvorenje - Bjelovar", popust: "-25%", tekst: "Uz kod: BJ25", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-kod-bj20", akcija: "Otvorenje - Bjelovar", popust: "-20%", tekst: "Uz kod: BJ20", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-23%", akcija: "Otvorenje - Bjelovar", popust: "-23%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-33%", akcija: "Otvorenje - Bjelovar", popust: "-33%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-30%", akcija: "Otvorenje - Bjelovar", popust: "-30%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-25%", akcija: "Otvorenje - Bjelovar", popust: "-25%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-27%", akcija: "Otvorenje - Bjelovar", popust: "-27%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" },
+  { naziv: "bj-50%", akcija: "Otvorenje - Bjelovar", popust: "-50%", tekst: "", boja: "#ffff00", datum: "Popusti otvorenja" }
 ];
 
 const CIRCLE_PINK = "#e83e8c";
