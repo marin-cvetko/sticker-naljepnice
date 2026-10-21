@@ -61,14 +61,21 @@ const KRUGOVI = [
 const CIRCLE_PINK = "#e83e8c";
 
 /*
- * Tri rasporeda A4. Cijela mreža krugova je centrirana lijevo-desno;
- * ispis počinje pri vrhu stranice i popunjava mjesta redom, bez preskakanja.
+ * Rasporedi A4. Ispis počinje pri vrhu stranice i popunjava mjesta redom,
+ * bez preskakanja. Fornax F-04 koristi koordinate iz isporučenog predloška.
  */
 const LAYOUTS = {
   dense: {
     label: "4 x 6 krugova po A4 (24 po stranici)",
     columns: 4, rows: 6, perPage: 24,
     diameterMm: 44.5, gapXmm: 5, rowPitchMm: 45,
+    template: "small"
+  },
+  fornaxF04: {
+    label: "Fornax F-04 (4 x 6 naljepnica po A4, 24 po stranici, Ø 40 mm)",
+    columns: 4, rows: 6, perPage: 24,
+    diameterMm: 40.005, gapXmm: 4.997, rowPitchMm: 44.997,
+    startXmm: 17.498, startYmm: 15.998,
     template: "small"
   },
   large: {
@@ -500,9 +507,9 @@ function printDocument(selectedItems = getSelected()) {
   for (let start = 0; start < copies.length; start += layout.perPage) {
     const pageCopies = copies.slice(start, start + layout.perPage);
     /* Vrh je fiksan; ne centriramo vertikalno kad je količina mala. */
-    const marginY = 8;
+    const marginY = layout.startYmm ?? 8;
     const gridWidth = layout.columns * d + (layout.columns - 1) * layout.gapXmm;
-    const gridLeft = (210 - gridWidth) / 2;
+    const gridLeft = layout.startXmm ?? (210 - gridWidth) / 2;
     const positioned = pageCopies.map((markup, position) => {
       const column = position % layout.columns;
       const row = Math.floor(position / layout.columns);
