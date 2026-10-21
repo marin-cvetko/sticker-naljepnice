@@ -72,11 +72,13 @@ const LAYOUTS = {
     template: "small"
   },
   fornaxF04: {
-    label: "Fornax F-04 (4 x 6 naljepnica po A4, 24 po stranici, Ø 40 mm)",
+    label: "Fornax F-04 (4 x 6 naljepnica po A4, 24 po stranici, Ø 45 mm)",
     columns: 4, rows: 6, perPage: 24,
-    diameterMm: 40.005, gapXmm: 4.997, rowPitchMm: 44.997,
+    // Položaji iz predloška ostaju nepromijenjeni; veći krug popunjava razmak.
+    diameterMm: 45, gapXmm: 0, columnPitchMm: 44.997, rowPitchMm: 44.997,
     startXmm: 17.498, startYmm: 15.998,
-    template: "small"
+    template: "small",
+    hideInnerRing: true
   },
   large: {
     label: "2 x 3 kruga po A4 (6 po stranici)",
@@ -156,7 +158,7 @@ function circleMarkup(circle, layout) {
   // Klase has-sub/has-date su izričite; CSS i auto-fit ne moraju pogađati
   // postoji li dodatni tekst ili datum prema skrivenim/praznim elementima.
   return `<div class="promo-item ${hasSub ? "has-sub" : "no-sub"} ${hasDate ? "has-date" : "no-date"}" data-template="${layout.template}">
-    <div class="promo-circle ${template} ${hasSub ? "has-sub" : "no-sub"}" style="--circle-color:${CIRCLE_PINK};--text-color:${textColor}" data-template="${layout.template}">
+    <div class="promo-circle ${template} ${hasSub ? "has-sub" : "no-sub"}${layout.hideInnerRing ? " no-inner-ring" : ""}" style="--circle-color:${CIRCLE_PINK};--text-color:${textColor}" data-template="${layout.template}">
       <div class="promo-content ${hasSub ? "has-sub" : "no-sub"} ${hasDate ? "has-date" : "no-date"}">
         <div class="promo-main">${escapeHtml(mainText)}</div>
         ${hasSub ? `<div class="promo-sub">${escapeHtml(subText)}</div>` : ""}
@@ -389,6 +391,7 @@ function commonCircleStyles() {
       border: .35mm solid rgba(255,255,255,.94);
       pointer-events: none;
     }
+    .promo-circle.no-inner-ring::after { display: none; }
     .template-large::after { inset: 4.3%; border-width: .65mm; }
 
     /* Grid redovi imaju namjenski prostor za glavni tekst, dodatni tekst i datum.
@@ -514,7 +517,7 @@ function printDocument(selectedItems = getSelected()) {
       const column = position % layout.columns;
       const row = Math.floor(position / layout.columns);
       /* Cijela mreža ostaje centrirana; primjerci pune sljedeću poziciju redom. */
-      const left = gridLeft + column * (d + layout.gapXmm);
+      const left = gridLeft + column * (layout.columnPitchMm ?? (d + layout.gapXmm));
       const top = marginY + row * layout.rowPitchMm;
       // Uključi stil pozicioniranja i kada promo-item već ima dodatne klase
       // (has-sub/no-sub, has-date/no-date). To je važno jer inače svi stoje na (0,0).
